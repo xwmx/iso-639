@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{iso-639}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["William Melody"]
-  s.date = %q{2010-01-20}
+  s.date = %q{2010-03-29}
   s.description = %q{ISO 639-1 and ISO 639-2 language code entries and convenience methods}
   s.email = %q{hi@williammelody.com}
   s.extra_rdoc_files = [
@@ -28,10 +28,10 @@ Gem::Specification.new do |s|
      "test/test_ISO_639.rb",
      "test/test_helper.rb"
   ]
-  s.homepage = %q{http://github.com/autodata/iso-639}
+  s.homepage = %q{http://github.com/alphabetum/iso-639}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{ISO 639-1 and ISO 639-2 language code entries and convenience methods}
   s.test_files = [
     "test/test_helper.rb",

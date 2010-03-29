@@ -1,6 +1,6 @@
 # ISO 639
 
-A Ruby gem that provides the ISO 639-2 and ISO 639-1 data sets along with a some convenience methods for accessing different entries and entry fields. The data comes from the [LOC ISO 639-2 UTF-8 data set](http://www.loc.gov/standards/iso639-2/ascii_8bits.html).
+A Ruby gem that provides the ISO 639-2 and ISO 639-1 data sets along with some convenience methods for accessing different entries and entry fields. The data comes from the [LOC ISO 639-2 UTF-8 data set](http://www.loc.gov/standards/iso639-2/ascii_8bits.html).
 
 To install:
 

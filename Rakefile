@@ -8,7 +8,7 @@ begin
     gem.summary = %Q{ISO 639-1 and ISO 639-2 language code entries and convenience methods}
     gem.description = %Q{ISO 639-1 and ISO 639-2 language code entries and convenience methods}
     gem.email = "hi@williammelody.com"
-    gem.homepage = "http://github.com/autodata/iso-639"
+    gem.homepage = "http://github.com/alphabetum/iso-639"
     gem.authors = ["William Melody"]
     gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
