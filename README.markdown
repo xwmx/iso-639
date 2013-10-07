@@ -10,8 +10,6 @@ The [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) specification uses a two
 
 The [ISO 639-2](http://www.loc.gov/standards/iso639-2/) ([Wikipedia](http://en.wikipedia.org/wiki/ISO_639-2)) specification uses a three-letter code, is used primarily in bibliography and terminology and covers many more languages than the ISO 639-1 specification.
 
-The other ISO 639 standards are considered beyond the scope of this library.
-
 ## Usage
 
     require 'iso-639'
