@@ -498,9 +498,9 @@ class ISO_639 < Array
     self["zza", "", "", "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki", "zaza; dimili; dimli; kirdki; kirmanjki; zazaki"]
   ]
 
-  # A reverse index generated from the ISO_639_2 data. Used for searching
+  # An inverted index generated from the ISO_639_2 data. Used for searching
   # all words and codes in all fields.
-  REVERSE_INDEX = lambda {
+  INVERTED_INDEX = lambda {
     index = {}
     ISO_639_2.each_with_index do |record, i|
       record.each do |field|
@@ -558,7 +558,7 @@ class ISO_639 < Array
     # French name field.
     def search(term)
       normalized_term = term.downcase.strip
-      indexes         = REVERSE_INDEX[normalized_term]
+      indexes         = INVERTED_INDEX[normalized_term]
       indexes ? ISO_639_2.values_at(*indexes).uniq : []
     end
   end
