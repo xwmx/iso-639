@@ -25,6 +25,13 @@ To find a language entry:
     # by French name
     ISO_639.find_by_french_name("français")
 
+The `ISO_639.search` class method searches across all fields and will
+match names in cases where a record has multiple names. This method
+always returns an array of 0 or more results. For example:
+
+    ISO_639.search("spanish")
+    # => [["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"]]
+
 Entries are arrays with convenience methods for accessing fields:
     
     @entry = ISO_639.find("slo")
