@@ -564,15 +564,15 @@ class ISO_639 < Array
   end
   
   # The entry's alpha-3 bibliotigraphic code.
-  def alpha3_bibliographic;  self[0] end
+  def alpha3_bibliographic;   self[0] end
   alias_method :alpha3, :alpha3_bibliographic
   # The entry's alpha-3 terminologic (when given)
-  def alpha3_terminologic;   self[1] end
+  def alpha3_terminologic;    self[1] end
   # The entry's alpha-2 code (when given)
-  def alpha2;               self[2] end
+  def alpha2;                 self[2] end
   # The entry's english name.
-  def english_name;         self[3] end
+  def english_name;           self[3] end
   # The entry's french name.
-  def french_name;          self[4] end
+  def french_name;            self[4] end
   
 end
