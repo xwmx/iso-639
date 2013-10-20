@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'helper'
 
 class TestISO639 < Test::Unit::TestCase
@@ -37,5 +38,37 @@ class TestISO639 < Test::Unit::TestCase
       assert_equal ["eng", "eng", "", "en", "English", "anglais"][i], @entry.send(m)
     end
   end
+
+  should "return single record array by searching a unique code" do
+    assert_equal(
+      [["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"]],
+      ISO_639.search("es")
+    )
+  end
+
+  should "return single record array by searching a unique term" do
+    assert_equal(
+      [["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"]],
+      ISO_639.search("spanish")
+    )
+  end
+
+  should "return multiple record array by searching a common term" do
+    assert_equal(
+      [
+        ["egy", "", "", "Egyptian (Ancient)", "égyptien"],
+        ["grc", "", "", "Greek, Ancient (to 1453)", "grec ancien (jusqu'à 1453)"]
+      ],
+      ISO_639.search("ancient")
+    )
+  end
+
+  should "return empty array when searching a non-existent term" do
+    assert_equal(
+      [], ISO_639.search("bad term")
+    )
+  end
+
+
   
 end

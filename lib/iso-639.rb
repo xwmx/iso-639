@@ -497,6 +497,26 @@ class ISO_639 < Array
     self["zxx", "", "", "No linguistic content; Not applicable", "pas de contenu linguistique; non applicable"],
     self["zza", "", "", "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki", "zaza; dimili; dimli; kirdki; kirmanjki; zazaki"]
   ]
+
+  # A reverse index generated from the ISO_639_2 data. Used for searching
+  # all words and codes in all fields
+  REVERSE_INDEX = lambda {
+    index = {}
+    ISO_639_2.each_with_index do |record, i|
+      record.each do |field|
+        field \
+          .downcase \
+          .split(/[[:blank:]]|\(|\)|;/) \
+          .each do |word|
+            unless word.empty?
+              index[word] ||= []
+              index[word] << i
+            end
+          end
+      end
+    end
+    return index
+  }.call
   
   # The ISO 639-1 dataset as an array of entries. Each entry is an array with
   # the following format:
@@ -529,6 +549,15 @@ class ISO_639 < Array
     # Returns the entry array for a language specified by its French name.
     def find_by_french_name(name)
       ISO_639_2.detect { |entry| entry if entry.french_name == name }
+    end
+
+    # Returns an array of matches for the search term. The term can be a code
+    # of any kind, or it can be one of the words contained in the English or
+    # French name field.
+    def search(term)
+      normalized_term = term.downcase.strip
+      indexes         = REVERSE_INDEX[normalized_term]
+      indexes ? ISO_639_2.values_at(*indexes).uniq : []
     end
   end
   
