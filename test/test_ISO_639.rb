@@ -69,6 +69,11 @@ class TestISO639 < Test::Unit::TestCase
     )
   end
 
-
+  should "return single record array by searching a unique multi-word term" do
+    assert_equal(
+      [["ypk", "", "", "Yupik languages", "yupik, langues"]],
+      ISO_639.search("yupik, langues")
+    )
+  end
   
 end

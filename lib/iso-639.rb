@@ -499,20 +499,22 @@ class ISO_639 < Array
   ]
 
   # A reverse index generated from the ISO_639_2 data. Used for searching
-  # all words and codes in all fields
+  # all words and codes in all fields.
   REVERSE_INDEX = lambda {
     index = {}
     ISO_639_2.each_with_index do |record, i|
       record.each do |field|
-        field \
-          .downcase \
-          .split(/[[:blank:]]|\(|\)|;/) \
-          .each do |word|
-            unless word.empty?
-              index[word] ||= []
-              index[word] << i
-            end
+        downcased = field.downcase
+        words = (
+          downcased.split(/[[:blank:]]|\(|\)|,|;/) +
+          downcased.split(/;/)
+        )
+        words.each do |word|
+          unless word.empty?
+            index[word] ||= []
+            index[word] << i
           end
+        end
       end
     end
     return index
