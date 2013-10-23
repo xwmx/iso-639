@@ -536,7 +536,7 @@ class ISO_639 < Array
     def find_by_code(code)
       case code.length
       when 3
-        ISO_639_2.detect { |entry| entry if entry.alpha3 == code }
+        ISO_639_2.detect { |entry| entry if entry.alpha3 == code || entry.alpha3_terminologic == code }
       when 2
         ISO_639_1.detect { |entry| entry if entry.alpha2 == code }
       end
