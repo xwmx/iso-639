@@ -15,6 +15,10 @@ class TestISO639 < Test::Unit::TestCase
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find_by_code("en")
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find("en")
   end
+
+  should "return entry for alpha-3 terminologic code" do
+    assert_equal ["ger", "deu", "de", "German", "allemand"], ISO_639.find("deu")
+  end
   
   should "find by english name" do
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find_by_english_name("English")
