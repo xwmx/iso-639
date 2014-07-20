@@ -11,6 +11,14 @@ class TestISO639 < Test::Unit::TestCase
     assert_equal 184, ISO_639::ISO_639_1.length
   end
   
+  should "return nil find_by_code when code does not exist or is invalid" do
+    assert ISO_639.find_by_code(nil).nil?, 'nil code'
+    assert ISO_639.find_by_code('xxx').nil?, 'xxx alfa-3 not existing code'
+    assert ISO_639.find_by_code('xx').nil?, 'xx alfa-2 not existing code'
+    assert ISO_639.find_by_code('xxxx').nil?, 'xxxx lengthy code'
+    assert ISO_639.find_by_code('').nil? ,'empty string code'
+  end
+  
   should "return entry for alpha-2 code" do
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find_by_code("en")
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find("en")
