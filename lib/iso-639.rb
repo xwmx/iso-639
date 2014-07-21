@@ -560,6 +560,7 @@ class ISO_639 < Array
     # of any kind, or it can be one of the words contained in the English or
     # French name field.
     def search(term)
+      term ||= ''
       normalized_term = term.downcase.strip
       indexes         = INVERTED_INDEX[normalized_term]
       indexes ? ISO_639_2.values_at(*indexes).uniq : []

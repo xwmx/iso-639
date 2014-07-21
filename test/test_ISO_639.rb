@@ -81,6 +81,10 @@ class TestISO639 < Test::Unit::TestCase
     )
   end
 
+  should "return empty array when searching a nil term" do
+    assert_equal [], ISO_639.search(nil)
+  end
+
   should "return single record array by searching a unique multi-word term" do
     assert_equal(
       [["ypk", "", "", "Yupik languages", "yupik, langues"]],
