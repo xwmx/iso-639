@@ -534,6 +534,9 @@ class ISO_639 < Array
   class << self
     # Returns the entry array for an alpha-2 or alpha-3 code
     def find_by_code(code)
+      if code.nil? 
+        return 
+      end
       case code.length
       when 3
         ISO_639_2.detect { |entry| entry if entry.alpha3 == code || entry.alpha3_terminologic == code }
