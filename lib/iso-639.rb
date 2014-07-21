@@ -534,26 +534,32 @@ class ISO_639 < Array
   class << self
     # Returns the entry array for an alpha-2 or alpha-3 code
     def find_by_code(code)
-      if code.nil? 
-        return 
-      end
+      return if code.nil?
       case code.length
       when 3
-        ISO_639_2.detect { |entry| entry if entry.alpha3 == code || entry.alpha3_terminologic == code }
+        ISO_639_2.detect do |entry|
+          entry if entry.alpha3 == code || entry.alpha3_terminologic == code
+        end
       when 2
-        ISO_639_1.detect { |entry| entry if entry.alpha2 == code }
+        ISO_639_1.detect do |entry|
+          entry if entry.alpha2 == code
+        end
       end
     end
     alias_method :find, :find_by_code
     
     # Returns the entry array for a language specified by its English name.
     def find_by_english_name(name)
-      ISO_639_2.detect { |entry| entry if entry.english_name == name }
+      ISO_639_2.detect do |entry|
+        entry if entry.english_name == name
+      end
     end
     
     # Returns the entry array for a language specified by its French name.
     def find_by_french_name(name)
-      ISO_639_2.detect { |entry| entry if entry.french_name == name }
+      ISO_639_2.detect do |entry|
+        entry if entry.french_name == name
+      end
     end
 
     # Returns an array of matches for the search term. The term can be a code
