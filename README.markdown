@@ -33,7 +33,7 @@ always returns an array of 0 or more results. For example:
     # => [["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"]]
 
 Entries are arrays with convenience methods for accessing fields:
-    
+
     @entry = ISO_639.find("slo")
     # => ["slo", "slk", "sk", "Slovak", "slovaque"]
     @entry.alpha3_bibliographic
@@ -52,7 +52,7 @@ Entries are arrays with convenience methods for accessing fields:
 The full data set is available through the `ISO_639::ISO_639_1` and `ISO_639::ISO_639_2` constants.
 
 ## Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a

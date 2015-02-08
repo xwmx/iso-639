@@ -2,15 +2,15 @@
 require 'helper'
 
 class TestISO639 < Test::Unit::TestCase
-  
+
   should "have full code list in ISO_639_2" do
     assert_equal 485, ISO_639::ISO_639_2.length
   end
-  
+
   should "have shorter code list in ISO_639_1" do
     assert_equal 184, ISO_639::ISO_639_1.length
   end
-  
+
   should "return nil find_by_code when code does not exist or is invalid" do
     assert ISO_639.find_by_code(nil).nil?, 'nil code'
     assert ISO_639.find_by_code('xxx').nil?, 'xxx alfa-3 not existing code'
@@ -18,7 +18,7 @@ class TestISO639 < Test::Unit::TestCase
     assert ISO_639.find_by_code('xxxx').nil?, 'xxxx lengthy code'
     assert ISO_639.find_by_code('').nil? ,'empty string code'
   end
-  
+
   should "return entry for alpha-2 code" do
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find_by_code("en")
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find("en")
@@ -27,15 +27,15 @@ class TestISO639 < Test::Unit::TestCase
   should "return entry for alpha-3 terminologic code" do
     assert_equal ["ger", "deu", "de", "German", "allemand"], ISO_639.find("deu")
   end
-  
+
   should "find by english name" do
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find_by_english_name("English")
   end
-  
+
   should "find by french name" do
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find_by_french_name("anglais")
   end
-  
+
   %w[
     alpha3_bibliographic
     alpha3
@@ -91,5 +91,5 @@ class TestISO639 < Test::Unit::TestCase
       ISO_639.search("yupik, langues")
     )
   end
-  
+
 end

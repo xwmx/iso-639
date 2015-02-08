@@ -2,7 +2,7 @@
 # http://www.loc.gov/standards/iso639-2/ascii_8bits.html
 
 class ISO_639 < Array
-  
+
   # The ISO 639-2 dataset as an array of entries. Each entry is an array with
   # the following format:
   # * [0]: an alpha-3 (bibliographic) code
@@ -519,7 +519,7 @@ class ISO_639 < Array
     end
     return index
   }.call
-  
+
   # The ISO 639-1 dataset as an array of entries. Each entry is an array with
   # the following format:
   # * [0]: an ISO 369-2 alpha-3 (bibliographic) code
@@ -530,7 +530,7 @@ class ISO_639 < Array
   ISO_639_1 = ISO_639_2.collect do |entry|
     entry unless entry[2].empty?
   end.compact
-  
+
   class << self
     # Returns the entry array for an alpha-2 or alpha-3 code
     def find_by_code(code)
@@ -547,14 +547,14 @@ class ISO_639 < Array
       end
     end
     alias_method :find, :find_by_code
-    
+
     # Returns the entry array for a language specified by its English name.
     def find_by_english_name(name)
       ISO_639_2.detect do |entry|
         entry if entry.english_name == name
       end
     end
-    
+
     # Returns the entry array for a language specified by its French name.
     def find_by_french_name(name)
       ISO_639_2.detect do |entry|
@@ -572,7 +572,7 @@ class ISO_639 < Array
       indexes ? ISO_639_2.values_at(*indexes).uniq : []
     end
   end
-  
+
   # The entry's alpha-3 bibliotigraphic code.
   def alpha3_bibliographic;   self[0] end
   alias_method :alpha3, :alpha3_bibliographic
@@ -584,5 +584,5 @@ class ISO_639 < Array
   def english_name;           self[3] end
   # The entry's french name.
   def french_name;            self[4] end
-  
+
 end
