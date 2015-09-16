@@ -29,10 +29,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  minitest (~> 5.8.0)
-  mocha (~> 1.1.0)
+  minitest
+  mocha
   rake
-  rdoc (~> 4.2.0)
+  rdoc
   rubocop
   test-unit
 
