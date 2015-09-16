@@ -28,12 +28,6 @@ Style/Documentation:
   Enabled: false
 
 # Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundClassBody:
-  Enabled: false
-
-# Offense count: 2
 # Configuration parameters: Exclude.
 Style/FileName:
   Enabled: false

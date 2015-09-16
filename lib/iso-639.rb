@@ -2,7 +2,6 @@
 # http://www.loc.gov/standards/iso639-2/ascii_8bits.html
 
 class ISO_639 < Array
-
   # The ISO 639-2 dataset as an array of entries. Each entry is an array with
   # the following format:
   # * [0]: an alpha-3 (bibliographic) code
@@ -598,5 +597,4 @@ class ISO_639 < Array
   def french_name
     self[4]
   end
-
 end
