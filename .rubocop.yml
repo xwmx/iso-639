@@ -14,3 +14,12 @@ inherit_from: .rubocop_todo.yml
 # here to accommodate the data.
 Metrics/ClassLength:
   Max: 600
+
+# Set minimum non-`%w`/`%W` word array size to 5
+#
+# Since this library works extensively with word arrays that sometimes include
+# whitespace and punctuation, stick to a convention of using explicit arrays
+# of words, and only trigger this cop when such arrays go over the 5-word
+# length of the arrays in the data.
+Style/WordArray:
+  MinSize: 5
