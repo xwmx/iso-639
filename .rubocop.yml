@@ -5,3 +5,12 @@
 # https://github.com/bbatsov/rubocop#configuration
 
 inherit_from: .rubocop_todo.yml
+
+# Disable Metrics/ClassLength
+#
+# The ISO_639 class also contains the data in a hard-coded array, which makes
+# the class exceptionally long. Alternative approaches for cleanly including
+# this data can be considered, but in the meantime the max length is raised
+# here to accommodate the data.
+Metrics/ClassLength:
+  Max: 600
