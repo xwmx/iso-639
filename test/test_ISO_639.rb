@@ -1,17 +1,17 @@
 # encoding: UTF-8
 require 'helper'
 
-class TestISO639 < Test::Unit::TestCase
+describe ISO_639 do
 
-  should "have full code list in ISO_639_2" do
+  it "should have full code list in ISO_639_2" do
     assert_equal 485, ISO_639::ISO_639_2.length
   end
 
-  should "have shorter code list in ISO_639_1" do
+  it "should have shorter code list in ISO_639_1" do
     assert_equal 184, ISO_639::ISO_639_1.length
   end
 
-  should "return nil find_by_code when code does not exist or is invalid" do
+  it "should return nil find_by_code when code does not exist or is invalid" do
     assert ISO_639.find_by_code(nil).nil?, 'nil code'
     assert ISO_639.find_by_code('xxx').nil?, 'xxx alfa-3 not existing code'
     assert ISO_639.find_by_code('xx').nil?, 'xx alfa-2 not existing code'
@@ -19,20 +19,20 @@ class TestISO639 < Test::Unit::TestCase
     assert ISO_639.find_by_code('').nil? ,'empty string code'
   end
 
-  should "return entry for alpha-2 code" do
+  it "should return entry for alpha-2 code" do
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find_by_code("en")
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find("en")
   end
 
-  should "return entry for alpha-3 terminologic code" do
+  it "should return entry for alpha-3 terminologic code" do
     assert_equal ["ger", "deu", "de", "German", "allemand"], ISO_639.find("deu")
   end
 
-  should "find by english name" do
+  it "should find by english name" do
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find_by_english_name("English")
   end
 
-  should "find by french name" do
+  it "should find by french name" do
     assert_equal ["eng", "", "en", "English", "anglais"], ISO_639.find_by_french_name("anglais")
   end
 
@@ -44,28 +44,28 @@ class TestISO639 < Test::Unit::TestCase
     english_name
     french_name
   ].each_with_index do |m, i|
-    should "respond to and return #{m}" do
+    it "should respond to and return #{m}" do
       @entry = ISO_639.find("en")
       assert @entry.respond_to?(m)
       assert_equal ["eng", "eng", "", "en", "English", "anglais"][i], @entry.send(m)
     end
   end
 
-  should "return single record array by searching a unique code" do
+  it "should return single record array by searching a unique code" do
     assert_equal(
       [["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"]],
       ISO_639.search("es")
     )
   end
 
-  should "return single record array by searching a unique term" do
+  it "should return single record array by searching a unique term" do
     assert_equal(
       [["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"]],
       ISO_639.search("spanish")
     )
   end
 
-  should "return multiple record array by searching a common term" do
+  it "should return multiple record array by searching a common term" do
     assert_equal(
       [
         ["egy", "", "", "Egyptian (Ancient)", "égyptien"],
@@ -75,17 +75,17 @@ class TestISO639 < Test::Unit::TestCase
     )
   end
 
-  should "return empty array when searching a non-existent term" do
+  it "should return empty array when searching a non-existent term" do
     assert_equal(
       [], ISO_639.search("bad term")
     )
   end
 
-  should "return empty array when searching a nil term" do
+  it "should return empty array when searching a nil term" do
     assert_equal [], ISO_639.search(nil)
   end
 
-  should "return single record array by searching a unique multi-word term" do
+  it "should return single record array by searching a unique multi-word term" do
     assert_equal(
       [["ypk", "", "", "Yupik languages", "yupik, langues"]],
       ISO_639.search("yupik, langues")
