@@ -9,6 +9,7 @@ group :development, :test do
   gem "minitest", "~> 5.8.0"
   gem "mocha", "~> 1.1.0"
   gem "rdoc", "~> 4.2.0"
+  gem "rubocop"
   gem "rake"
   gem "test-unit"
 end
