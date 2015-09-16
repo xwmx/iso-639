@@ -77,16 +77,6 @@ Style/MultilineIfThen:
 Style/PercentLiteralDelimiters:
   Enabled: false
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/SpaceAfterComma:
-  Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/SpaceBeforeComma:
-  Enabled: false
-
 # Offense count: 2536
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.

@@ -16,7 +16,7 @@ describe ISO_639 do
     assert ISO_639.find_by_code('xxx').nil?, 'xxx alfa-3 not existing code'
     assert ISO_639.find_by_code('xx').nil?, 'xx alfa-2 not existing code'
     assert ISO_639.find_by_code('xxxx').nil?, 'xxxx lengthy code'
-    assert ISO_639.find_by_code('').nil? ,'empty string code'
+    assert ISO_639.find_by_code('').nil?, 'empty string code'
   end
 
   it "should return entry for alpha-2 code" do
