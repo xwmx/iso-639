@@ -2,7 +2,6 @@
 require 'helper'
 
 describe ISO_639 do
-
   it "should have full code list in ISO_639_2" do
     assert_equal 485, ISO_639::ISO_639_2.length
   end
@@ -91,5 +90,4 @@ describe ISO_639 do
       ISO_639.search("yupik, langues")
     )
   end
-
 end
