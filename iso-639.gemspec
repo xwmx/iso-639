@@ -34,10 +34,10 @@ Gem::Specification.new do |s|
   s.rubygems_version = "1.8.24"
   s.summary = "ISO 639-1 and ISO 639-2 language code entries and convenience methods"
 
-  if s.respond_to? :specification_version then
+  if s.respond_to? :specification_version
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0')
       s.add_development_dependency(%q<minitest>, ["~> 4.7.5"])
       s.add_development_dependency(%q<mocha>, ["~> 0.14.0"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
