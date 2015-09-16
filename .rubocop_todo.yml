@@ -32,12 +32,6 @@ Style/Documentation:
 Style/FileName:
   Enabled: false
 
-# Offense count: 13
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Enabled: false
-
 # Offense count: 2536
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
