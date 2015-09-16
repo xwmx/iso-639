@@ -43,8 +43,3 @@ Style/PercentLiteralDelimiters:
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/StringLiterals:
   Enabled: false
-
-# Offense count: 12
-# Cop supports --auto-correct.
-Style/UnneededPercentQ:
-  Enabled: false
