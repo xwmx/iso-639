@@ -500,7 +500,7 @@ class ISO_639 < Array
 
   # An inverted index generated from the ISO_639_2 data. Used for searching
   # all words and codes in all fields.
-  INVERTED_INDEX = lambda {
+  INVERTED_INDEX = lambda do
     index = {}
     ISO_639_2.each_with_index do |record, i|
       record.each do |field|
@@ -518,7 +518,7 @@ class ISO_639 < Array
       end
     end
     return index
-  }.call
+  end.call
 
   # The ISO 639-1 dataset as an array of entries. Each entry is an array with
   # the following format:
