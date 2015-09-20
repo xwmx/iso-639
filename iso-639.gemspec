@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
     "iso-639.gemspec",
     "lib/iso-639.rb",
     "test/helper.rb",
-    "test/test_ISO_639.rb"
+    "test/test_iso_639.rb"
   ]
   s.homepage = "http://github.com/alphabetum/iso-639"
   s.licenses = ["MIT"]

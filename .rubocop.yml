@@ -15,6 +15,15 @@ inherit_from: .rubocop_todo.yml
 Metrics/ClassLength:
   Max: 600
 
+# Exclude iso-639.rb from Style/FileName
+#
+# This filename violates the common convention in Ruby and should be renamed
+# in the future. Exclude for now in order to have this cop available for other
+# files in the meantime.
+Style/FileName:
+  Exclude:
+    - 'lib/iso-639.rb'
+
 # Set minimum non-`%w`/`%W` word array size to 5
 #
 # Since this library works extensively with word arrays that sometimes include
