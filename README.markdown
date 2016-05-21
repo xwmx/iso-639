@@ -4,7 +4,9 @@ A Ruby gem that provides the ISO 639-2 and ISO 639-1 data sets along with some c
 
 To install:
 
-    gem install iso-639
+```bash
+gem install iso-639
+```
 
 The [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) specification uses a two-letter code to identify a language and is often the recommended way to identify languages in computer applications. The ISO 639-1 specification covers most developed and widely used languages.
 
@@ -12,42 +14,50 @@ The [ISO 639-2](http://www.loc.gov/standards/iso639-2/) ([Wikipedia](http://en.w
 
 ## Usage
 
-    require 'iso-639'
+```ruby
+require 'iso-639'
+```
 
 To find a language entry:
 
-    # by alpha-2 or alpha-3 code
-    ISO_639.find_by_code("en")
-    # or
-    ISO_639.find("en")
-    # by English name
-    ISO_639.find_by_english_name("Russian")
-    # by French name
-    ISO_639.find_by_french_name("français")
+```ruby
+# by alpha-2 or alpha-3 code
+ISO_639.find_by_code("en")
+# or
+ISO_639.find("en")
+# by English name
+ISO_639.find_by_english_name("Russian")
+# by French name
+ISO_639.find_by_french_name("français")
+```
 
 The `ISO_639.search` class method searches across all fields and will
 match names in cases where a record has multiple names. This method
 always returns an array of 0 or more results. For example:
 
-    ISO_639.search("spanish")
-    # => [["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"]]
+```ruby
+ISO_639.search("spanish")
+# => [["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"]]
+```
 
 Entries are arrays with convenience methods for accessing fields:
 
-    @entry = ISO_639.find("slo")
-    # => ["slo", "slk", "sk", "Slovak", "slovaque"]
-    @entry.alpha3_bibliographic
-    # => "slo"
-    @entry.alpha3 # shortcut for #alpha3_bibliographic
-    # => "slo"
-    @entry.alpha3_terminologic
-    # => "slk"
-    @entry.alpha2
-    # => "sk"
-    @entry.english_name
-    # => "Slovak"
-    @entry.french_name
-    # => "slovaque"
+```ruby
+@entry = ISO_639.find("slo")
+# => ["slo", "slk", "sk", "Slovak", "slovaque"]
+@entry.alpha3_bibliographic
+# => "slo"
+@entry.alpha3 # shortcut for #alpha3_bibliographic
+# => "slo"
+@entry.alpha3_terminologic
+# => "slk"
+@entry.alpha2
+# => "sk"
+@entry.english_name
+# => "Slovak"
+@entry.french_name
+# => "slovaque"
+```
 
 The full data set is available through the `ISO_639::ISO_639_1` and `ISO_639::ISO_639_2` constants.
 
