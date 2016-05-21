@@ -14,14 +14,14 @@ Gem::Specification.new do |s|
   s.email = "hi@williammelody.com"
   s.extra_rdoc_files = [
     "LICENSE",
-    "README.markdown"
+    "README.md"
   ]
   s.files = [
     ".document",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE",
-    "README.markdown",
+    "README.md",
     "Rakefile",
     "iso-639.gemspec",
     "lib/iso-639.rb",
