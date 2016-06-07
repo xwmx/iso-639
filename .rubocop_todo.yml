@@ -21,14 +21,6 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 11
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: prefer_alias, prefer_alias_method
-Style/Alias:
-  Exclude:
-    - 'lib/iso-639.rb'
-
 # Offense count: 1
 Style/ClassAndModuleCamelCase:
   Exclude:

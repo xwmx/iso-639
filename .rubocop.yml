@@ -15,6 +15,19 @@ inherit_from: .rubocop_todo.yml
 Metrics/ClassLength:
   Max: 600
 
+# Prefer `alias_method`
+#
+# This is debated and a nuanced issue. More infomation:
+# - http://stackoverflow.com/q/4763121
+# - http://blog.bigbinary.com/2012/01/08/alias-vs-alias-method.html
+# - https://ernie.io/2014/10/23/in-defense-of-alias/
+# - https://github.com/bbatsov/ruby-style-guide#alias-method-lexically
+# - https://github.com/bbatsov/ruby-style-guide#alias-method
+#
+# http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/Alias
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
 # Exclude iso-639.rb from Style/FileName
 #
 # This filename violates the common convention in Ruby and should be renamed
