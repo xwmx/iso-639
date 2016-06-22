@@ -33,12 +33,6 @@ Style/Documentation:
     - 'test/**/*'
     - 'lib/iso-639.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/MutableConstant:
-  Exclude:
-    - 'lib/iso-639.rb'
-
 # Offense count: 2457
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.

@@ -495,7 +495,7 @@ class ISO_639 < Array
     self["zun", "", "", "Zuni", "zuni"],
     self["zxx", "", "", "No linguistic content; Not applicable", "pas de contenu linguistique; non applicable"],
     self["zza", "", "", "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki", "zaza; dimili; dimli; kirdki; kirmanjki; zazaki"]
-  ]
+  ].freeze
 
   # An inverted index generated from the ISO_639_2 data. Used for searching
   # all words and codes in all fields.
@@ -517,7 +517,7 @@ class ISO_639 < Array
       end
     end
     return index
-  end.call
+  end.call.freeze
 
   # The ISO 639-1 dataset as an array of entries. Each entry is an array with
   # the following format:
@@ -528,7 +528,7 @@ class ISO_639 < Array
   # * [4]: a French name
   ISO_639_1 = ISO_639_2.collect do |entry|
     entry unless entry[2].empty?
-  end.compact
+  end.compact.freeze
 
   class << self
     # Returns the entry array for an alpha-2 or alpha-3 code
