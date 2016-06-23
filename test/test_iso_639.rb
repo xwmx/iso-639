@@ -90,4 +90,40 @@ describe ISO_639 do
       ISO_639.search("yupik, langues")
     )
   end
+
+  it "should error when attempting to change immutable ISO_639_2" do
+    assert_raises RuntimeError do
+      ISO_639::ISO_639_2 << ["test", "array"]
+    end
+
+    assert_raises RuntimeError do
+      ISO_639::ISO_639_2[0] = []
+    end
+
+    assert_raises RuntimeError do
+      ISO_639::ISO_639_2[0][1] = ""
+    end
+
+    assert_raises RuntimeError do
+      ISO_639::ISO_639_2[0][1].upcase!
+    end
+  end
+
+  it "should error when attempting to change immutable ISO_639_1" do
+    assert_raises RuntimeError do
+      ISO_639::ISO_639_1 << ["test", "array"]
+    end
+
+    assert_raises RuntimeError do
+      ISO_639::ISO_639_1[0] = []
+    end
+
+    assert_raises RuntimeError do
+      ISO_639::ISO_639_1[0][1] = ""
+    end
+
+    assert_raises RuntimeError do
+      ISO_639::ISO_639_1[0][1].upcase!
+    end
+  end
 end

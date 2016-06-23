@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require 'bundler'
+require 'allocation_stats'
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+stats = AllocationStats.trace do
+  require 'iso-639.rb'
+  ISO_639.find_by_code("en")
+end
+
+puts stats.allocations.group_by(:class).to_text

@@ -2,6 +2,11 @@
 # http://www.loc.gov/standards/iso639-2/ascii_8bits.html
 
 class ISO_639 < Array
+  # Redefine `[]` to freeze all strings and arrays.
+  def self.[](*args)
+    super(*args.map(&:freeze)).freeze
+  end
+
   # The ISO 639-2 dataset as an array of entries. Each entry is an array with
   # the following format:
   # * [0]: an alpha-3 (bibliographic) code

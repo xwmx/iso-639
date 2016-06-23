@@ -6,6 +6,7 @@ source "http://rubygems.org"
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development, :test do
+  gem "allocation_stats"
   gem "minitest"
   gem "mocha"
   gem "rake"
