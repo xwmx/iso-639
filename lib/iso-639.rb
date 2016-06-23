@@ -1,10 +1,18 @@
 # encoding: UTF-8
+# frozen_string_literal: true
 # http://www.loc.gov/standards/iso639-2/ascii_8bits.html
 
 class ISO_639 < Array
   # Redefine `[]` to freeze all strings and arrays.
+  #
+  # Ruby 2.3+ uses the `frozen_string_literal` magic comment to freeze all
+  # strings, while previous versions require the `#map` approach.
   def self.[](*args)
-    super(*args.map(&:freeze)).freeze
+    if args[0].frozen?
+      super(*args).freeze
+    else
+      super(*args.map(&:freeze)).freeze
+    end
   end
 
   # The ISO 639-2 dataset as an array of entries. Each entry is an array with
