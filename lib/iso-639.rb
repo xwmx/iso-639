@@ -7,11 +7,17 @@ class ISO_639 < Array
   #
   # Ruby 2.3+ uses the `frozen_string_literal` magic comment to freeze all
   # strings, while previous versions require the `#map` approach.
-  def self.[](*args)
-    if args[0].frozen?
-      super(*args).freeze
+  def self.[](a3_bib, a3_term, a2, english_name, french_name)
+    if a3_bib.frozen? # then Ruby 2.3+
+      super(a3_bib, a3_term, a2, english_name, french_name).freeze
     else
-      super(*args.map(&:freeze)).freeze
+      super(
+        a3_bib.freeze,
+        a3_term.freeze,
+        a2.freeze,
+        english_name.freeze,
+        french_name.freeze
+      ).freeze
     end
   end
 
