@@ -38,3 +38,6 @@ DEPENDENCIES
   rdoc
   rubocop
   test-unit
+
+BUNDLED WITH
+   1.12.2
