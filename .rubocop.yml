@@ -18,6 +18,15 @@ inherit_from: .rubocop_todo.yml
 Metrics/ClassLength:
   Max: 600
 
+# Exclude iso-639.rb from Naming/FileName
+#
+# This filename violates the common convention in Ruby and should be renamed
+# in the future. Exclude for now in order to have this cop available for other
+# files in the meantime.
+Naming/FileName:
+  Exclude:
+    - 'lib/iso-639.rb'
+
 # Prefer `alias_method`
 #
 # This is debated and a nuanced issue. More infomation:
@@ -30,15 +39,6 @@ Metrics/ClassLength:
 # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/Alias
 Style/Alias:
   EnforcedStyle: prefer_alias_method
-
-# Exclude iso-639.rb from Style/FileName
-#
-# This filename violates the common convention in Ruby and should be renamed
-# in the future. Exclude for now in order to have this cop available for other
-# files in the meantime.
-Style/FileName:
-  Exclude:
-    - 'lib/iso-639.rb'
 
 # Set minimum non-`%w`/`%W` word array size to 5
 #
