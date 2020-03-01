@@ -35,14 +35,14 @@ describe ISO_639 do
     assert_equal ['eng', '', 'en', 'English', 'anglais'], ISO_639.find_by_french_name('anglais')
   end
 
-  %w(
+  %w[
     alpha3_bibliographic
     alpha3
     alpha3_terminologic
     alpha2
     english_name
     french_name
-  ).each_with_index do |m, i|
+  ].each_with_index do |m, i|
     it "should respond to and return #{m}" do
       @entry = ISO_639.find('en')
       assert @entry.respond_to?(m)

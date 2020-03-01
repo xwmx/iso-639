@@ -68,13 +68,6 @@ Style/FrozenStringLiteralComment:
     - 'test/helper.rb'
     - 'test/test_iso_639.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'test/test_iso_639.rb'
-
 # Offense count: 6
 # Cop supports --auto-correct.
 Style/StderrPuts:
