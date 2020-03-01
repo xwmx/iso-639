@@ -46,15 +46,6 @@ Naming/MethodParameterName:
   Exclude:
     - 'lib/iso-639.rb'
 
-# Offense count: 4
-# Cop supports --auto-correct.
-Style/Encoding:
-  Exclude:
-    - 'Rakefile'
-    - 'iso-639.gemspec'
-    - 'lib/iso-639.rb'
-    - 'test/test_iso_639.rb'
-
 # Offense count: 6
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.

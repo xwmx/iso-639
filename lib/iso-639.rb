@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # frozen_string_literal: true
 # http://www.loc.gov/standards/iso639-2/ascii_8bits.html
 

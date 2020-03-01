@@ -1,4 +1,3 @@
-# encoding: UTF-8
 require 'helper'
 
 describe ISO_639 do
