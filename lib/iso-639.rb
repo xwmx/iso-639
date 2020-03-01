@@ -553,6 +553,7 @@ class ISO_639 < Array
     # Returns the entry array for an alpha-2 or alpha-3 code
     def find_by_code(code)
       return if code.nil?
+
       case code.length
       when 3
         ISO_639_2.detect do |entry|

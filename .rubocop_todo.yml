@@ -7,12 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-# Cop supports --auto-correct.
-Layout/EmptyLineAfterGuardClause:
-  Exclude:
-    - 'lib/iso-639.rb'
-
-# Offense count: 1
 # Configuration parameters: CountComments, ExcludedMethods.
 # ExcludedMethods: refine
 Metrics/BlockLength:
