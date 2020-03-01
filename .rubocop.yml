@@ -40,6 +40,18 @@ Naming/FileName:
 Style/Alias:
   EnforcedStyle: prefer_alias_method
 
+# TODO: Remove when Rubocop hits version 1.0.
+Style/HashEachMethods:
+  Enabled: true
+
+# TODO: Remove when Rubocop hits version 1.0.
+Style/HashTransformKeys:
+  Enabled: true
+
+# TODO: Remove when Rubocop hits version 1.0.
+Style/HashTransformValues:
+  Enabled: true
+
 # Set minimum non-`%w`/`%W` word array size to 5
 #
 # Since this library works extensively with word arrays that sometimes include
