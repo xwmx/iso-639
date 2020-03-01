@@ -30,6 +30,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency('minitest',  '~> 5', '>= 0')
   s.add_development_dependency('mocha',     '~> 1', '>= 0')
   s.add_development_dependency('rdoc',      '~> 6', '>= 0')
-  s.add_development_dependency('rubocop',   '~> 0', '>= 0')
+  s.add_development_dependency('rubocop',   '~> 0', '>= 0.49.0')
   s.add_development_dependency('test-unit', '~> 3', '>= 0')
 end
