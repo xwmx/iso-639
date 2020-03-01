@@ -40,6 +40,10 @@ Naming/FileName:
 Style/Alias:
   EnforcedStyle: prefer_alias_method
 
+# Disable documentation checks.
+Style/Documentation:
+  Enabled: false
+
 # TODO: Remove when Rubocop hits version 1.0.
 Style/HashEachMethods:
   Enabled: true

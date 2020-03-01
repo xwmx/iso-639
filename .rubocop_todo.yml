@@ -46,13 +46,6 @@ Naming/MethodParameterName:
   Exclude:
     - 'lib/iso-639.rb'
 
-# Offense count: 1
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'lib/iso-639.rb'
-
 # Offense count: 4
 # Cop supports --auto-correct.
 Style/Encoding:
