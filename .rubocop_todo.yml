@@ -12,13 +12,6 @@ Layout/EmptyLineAfterGuardClause:
   Exclude:
     - 'lib/iso-639.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Layout/EmptyLineAfterMagicComment:
-  Exclude:
-    - 'lib/iso-639.rb'
-    - 'test/test_iso_639.rb'
-
 # Offense count: 1
 # Configuration parameters: CountComments, ExcludedMethods.
 # ExcludedMethods: refine

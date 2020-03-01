@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # http://www.loc.gov/standards/iso639-2/ascii_8bits.html
 
 class ISO_639 < Array
