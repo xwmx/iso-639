@@ -46,14 +46,6 @@ Naming/MethodParameterName:
   Exclude:
     - 'lib/iso-639.rb'
 
-# Offense count: 6
-# Cop supports --auto-correct.
-Style/StderrPuts:
-  Exclude:
-    - 'Rakefile'
-    - 'test/allocation_stats'
-    - 'test/helper.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: WordRegex.
