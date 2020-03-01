@@ -556,7 +556,7 @@ class ISO_639 < Array
       case code.length
       when 3
         ISO_639_2.detect do |entry|
-          entry if entry.alpha3 == code || entry.alpha3_terminologic == code
+          entry if [entry.alpha3, entry.alpha3_terminologic].include?(code)
         end
       when 2
         ISO_639_1.detect do |entry|
