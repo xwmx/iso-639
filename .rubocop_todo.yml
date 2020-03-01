@@ -95,20 +95,6 @@ Style/StderrPuts:
     - 'test/allocation_stats'
     - 'test/helper.rb'
 
-# Offense count: 2563
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Exclude:
-    - 'Gemfile'
-    - 'Rakefile'
-    - 'iso-639.gemspec'
-    - 'lib/iso-639.rb'
-    - 'test/allocation_stats'
-    - 'test/helper.rb'
-    - 'test/test_iso_639.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: WordRegex.
