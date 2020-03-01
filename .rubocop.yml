@@ -4,6 +4,9 @@
 #
 # https://github.com/bbatsov/rubocop#configuration
 
+AllCops:
+  TargetRubyVersion: 2.3
+
 inherit_from: .rubocop_todo.yml
 
 # Disable Metrics/ClassLength
