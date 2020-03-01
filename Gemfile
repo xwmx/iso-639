@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'http://rubygems.org'
 # Add dependencies required to use your gem here.
 # Example:
