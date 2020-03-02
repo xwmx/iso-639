@@ -20,11 +20,8 @@ class ISO_639 < Array
       File.join(File.dirname(__FILE__), 'data', 'ISO-639-2_utf-8.txt'),
       'r:bom|utf-8'
     ) do |file|
-      CSV.new(file, **{
-        col_sep: '|',
-        converters: ->(v) { v || '' }
-      }).each do |row|
-        dataset << self[*row].freeze
+      CSV.new(file, **{ col_sep: '|' }).each do |row|
+        dataset << self[*row.map { |v| v || '' }].freeze
       end
     end
     return dataset
