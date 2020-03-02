@@ -18,7 +18,7 @@ class ISO_639 < Array
     dataset = []
     CSV.foreach(
       File.join(File.dirname(__FILE__), 'data', 'ISO-639-2_utf-8.txt'),
-      **{ col_sep: "|",
+      **{ col_sep: '|',
           converters: ->(v) { v || '' },
           encoding: 'bom|utf-8' }
     ).each do |row|

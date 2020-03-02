@@ -56,16 +56,6 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: true
 
-# Style/StringLiterals
-#
-# The data in this project is hard-coded in a Ruby array and contains strings
-# with non-ascii characters and single quotes, making double quotes necessary
-# in some cases. Maintain consistency by using all double quotes for this array
-# while using single quotes for all other project files.
-Style/StringLiterals:
-  Exclude:
-    - 'lib/iso-639.rb'
-
 # Set minimum non-`%w`/`%W` word array size to 5
 #
 # Since this library works extensively with word arrays that sometimes include
