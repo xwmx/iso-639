@@ -32,4 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency('rdoc',      '~> 6', '>= 0')
   s.add_development_dependency('rubocop',   '~> 0', '>= 0.49.0')
   s.add_development_dependency('test-unit', '~> 3', '>= 0')
+  s.required_ruby_version = '>= 2.3'
 end
