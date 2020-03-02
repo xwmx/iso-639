@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
     'README.md',
     'Rakefile',
     'iso-639.gemspec',
+    'lib/data/ISO-639-2_utf-8.txt',
     'lib/iso-639.rb',
     'test/helper.rb',
     'test/test_iso_639.rb'
