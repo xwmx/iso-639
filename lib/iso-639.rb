@@ -16,13 +16,16 @@ class ISO_639 < Array
   # https://www.loc.gov/standards/iso639-2/ISO-639-2_utf-8.txt
   ISO_639_2 = lambda do
     dataset = []
-    CSV.foreach(
+    File.open(
       File.join(File.dirname(__FILE__), 'data', 'ISO-639-2_utf-8.txt'),
-      **{ col_sep: '|',
-          converters: ->(v) { v || '' },
-          encoding: 'bom|utf-8' }
-    ).each do |row|
-      dataset << self[*row].freeze
+      'r:bom|utf-8'
+    ) do |file|
+      CSV.new(file, **{
+        col_sep: '|',
+        converters: ->(v) { v || '' }
+      }).each do |row|
+        dataset << self[*row].freeze
+      end
     end
     return dataset
   end.call.freeze
