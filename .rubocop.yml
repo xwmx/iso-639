@@ -9,6 +9,9 @@ AllCops:
 
 inherit_from: .rubocop_todo.yml
 
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
 # Disable Metrics/ClassLength
 #
 # The ISO_639 class also contains the data in a hard-coded array, which makes
