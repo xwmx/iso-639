@@ -4,8 +4,8 @@ Gem::Specification.new do |s|
   s.name = 'iso-639'
   s.version = '0.3.1'
   s.licenses = ['MIT']
-  s.summary = 'ISO 639-1 and ISO 639-2 language code entries and convenience methods'
-  s.description = 'ISO 639-1 and ISO 639-2 language code entries and convenience methods'
+  s.summary = 'ISO 639-1 and ISO 639-2 language code entries and convenience methods.'
+  s.description = 'ISO 639-1 and ISO 639-2 language code entries and convenience methods.'
   s.authors = ['William Melody']
   s.email = 'hi@williammelody.com'
   s.date = '2020-03-02'
