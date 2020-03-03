@@ -20,8 +20,14 @@ describe ISO_639 do
   end
 
   it 'should return entry for alpha-2 code' do
-    assert_equal ['eng', '', 'en', 'English', 'anglais'], ISO_639.find_by_code('en')
-    assert_equal ['eng', '', 'en', 'English', 'anglais'], ISO_639.find('en')
+    assert_equal(
+      ['eng', '', 'en', 'English', 'anglais'],
+      ISO_639.find_by_code('en')
+    )
+    assert_equal(
+      ['eng', '', 'en', 'English', 'anglais'],
+      ISO_639.find('en')
+    )
   end
 
   it 'should return entry for alpha-3 terminologic code' do
@@ -29,37 +35,43 @@ describe ISO_639 do
   end
 
   it 'should find by english name' do
-    assert_equal ['eng', '', 'en', 'English', 'anglais'], ISO_639.find_by_english_name('English')
+    assert_equal(
+      ['eng', '', 'en', 'English', 'anglais'],
+      ISO_639.find_by_english_name('English')
+    )
   end
 
   it 'should not find by english name when strict and not matched' do
     refute_equal(
-      ["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"],
+      ['spa', '', 'es', 'Spanish; Castilian', 'espagnol; castillan'],
       ISO_639.find_by_english_name('Spanish', strict: true)
     )
   end
 
   it 'should find by english name when strict false and fuzzy matched' do
     assert_equal(
-      ["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"],
+      ['spa', '', 'es', 'Spanish; Castilian', 'espagnol; castillan'],
       ISO_639.find_by_english_name('Spanish', strict: false)
     )
   end
 
   it 'should find by french name' do
-    assert_equal ['eng', '', 'en', 'English', 'anglais'], ISO_639.find_by_french_name('anglais')
+    assert_equal(
+      ['eng', '', 'en', 'English', 'anglais'],
+      ISO_639.find_by_french_name('anglais')
+    )
   end
 
   it 'should not find by french name when strict and not matched' do
     refute_equal(
-      ["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"],
+      ['spa', '', 'es', 'Spanish; Castilian', 'espagnol; castillan'],
       ISO_639.find_by_french_name('espagnol', strict: true)
     )
   end
 
   it 'should find by french name when strict false and fuzzy matched' do
     assert_equal(
-      ["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"],
+      ['spa', '', 'es', 'Spanish; Castilian', 'espagnol; castillan'],
       ISO_639.find_by_french_name('espagnol', strict: false)
     )
   end
@@ -75,7 +87,10 @@ describe ISO_639 do
     it "should respond to and return #{m}" do
       @entry = ISO_639.find('en')
       assert @entry.respond_to?(m)
-      assert_equal ['eng', 'eng', '', 'en', 'English', 'anglais'][i], @entry.send(m)
+      assert_equal(
+        ['eng', 'eng', '', 'en', 'English', 'anglais'][i],
+        @entry.send(m)
+      )
     end
   end
 
