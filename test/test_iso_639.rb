@@ -35,7 +35,7 @@ describe ISO_639 do
   it 'should not find by english name when strict and not matched' do
     refute_equal(
       ["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"],
-      ISO_639.find_by_english_name('Spanish')
+      ISO_639.find_by_english_name('Spanish', strict: true)
     )
   end
 
@@ -53,7 +53,7 @@ describe ISO_639 do
   it 'should not find by french name when strict and not matched' do
     refute_equal(
       ["spa", "", "es", "Spanish; Castilian", "espagnol; castillan"],
-      ISO_639.find_by_french_name('espagnol')
+      ISO_639.find_by_french_name('espagnol', strict: true)
     )
   end
 

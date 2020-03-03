@@ -79,23 +79,29 @@ class ISO_639 < Array
     alias_method :find, :find_by_code
 
     # Returns the entry array for a language specified by its English name.
-    def find_by_english_name(name, strict: true)
+    def find_by_english_name(name, strict: false)
       ISO_639_2.detect do |entry|
         if strict
           entry if entry.english_name == name
         else
-          entry if entry.english_name =~ /#{name}/
+          entry if [
+            entry.english_name,
+            *entry.english_name.split(';').map { |v| v.strip.downcase }
+          ].include?(name.downcase)
         end
       end
     end
 
     # Returns the entry array for a language specified by its French name.
-    def find_by_french_name(name, strict: true)
+    def find_by_french_name(name, strict: false)
       ISO_639_2.detect do |entry|
         if strict
           entry if entry.french_name == name
         else
-          entry if entry.french_name =~ /#{name}/
+          entry if [
+            entry.french_name,
+            *entry.french_name.split(';').map { |v| v.strip.downcase }
+          ].include?(name.downcase)
         end
       end
     end
