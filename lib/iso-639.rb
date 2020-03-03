@@ -83,11 +83,11 @@ class ISO_639 < Array
       ISO_639_2.detect do |entry|
         if strict
           entry if entry.english_name == name
-        else
-          entry if [
-            entry.english_name,
-            *entry.english_name.split(';').map { |v| v.strip.downcase }
-          ].include?(name.downcase)
+        elsif [
+          entry.english_name,
+          *entry.english_name.split(';').map { |v| v.strip.downcase }
+        ].include?(name.downcase)
+          entry
         end
       end
     end
@@ -97,11 +97,11 @@ class ISO_639 < Array
       ISO_639_2.detect do |entry|
         if strict
           entry if entry.french_name == name
-        else
-          entry if [
-            entry.french_name,
-            *entry.french_name.split(';').map { |v| v.strip.downcase }
-          ].include?(name.downcase)
+        elsif [
+          entry.french_name,
+          *entry.french_name.split(';').map { |v| v.strip.downcase }
+        ].include?(name.downcase)
+          entry
         end
       end
     end
