@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
     'test/helper.rb',
     'test/test_iso_639.rb'
   ]
-  s.homepage = 'http://github.com/alphabetum/iso-639'
+  s.homepage = 'http://github.com/xwmx/iso-639'
   s.require_paths = ['lib']
   s.add_development_dependency('minitest',  '~> 5', '>= 0')
   s.add_development_dependency('mocha',     '~> 1', '>= 0')
