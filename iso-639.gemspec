@@ -8,7 +8,6 @@ Gem::Specification.new do |s|
   s.description = 'ISO 639-1 and ISO 639-2 language code entries and convenience methods.'
   s.authors = ['William Melody']
   s.email = 'hi@williammelody.com'
-  s.date = '2020-03-02'
   s.extra_rdoc_files = [
     'LICENSE',
     'README.md'
