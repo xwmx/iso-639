@@ -17,7 +17,7 @@ covers many more languages than the ISO 639-1 specification.
 
 ## Installation
 
-To install from [RubyGems](https://rubygems.org/gems/RbST):
+To install from [RubyGems](https://rubygems.org/gems/iso-639):
 
 ```bash
 gem install iso-639
