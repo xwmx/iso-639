@@ -1,16 +1,36 @@
 # ISO 639
 
-A Ruby gem that provides the ISO 639-2 and ISO 639-1 data sets along with some convenience methods for accessing different entries and entry fields. The data comes from the [LOC ISO 639-2 UTF-8 data set](http://www.loc.gov/standards/iso639-2/ascii_8bits.html).
+A Ruby gem that provides the ISO 639-2 and ISO 639-1 data sets along with some
+convenience methods for accessing different entries and entry fields. The data
+comes from the
+[LOC ISO 639-2 UTF-8 data set](http://www.loc.gov/standards/iso639-2/ascii_8bits.html).
 
-To install:
+The [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) specification uses a
+two-letter code to identify a language and is often the recommended way to
+identify languages in computer applications. The ISO 639-1 specification covers
+most developed and widely used languages.
+
+The [ISO 639-2](http://www.loc.gov/standards/iso639-2/)
+([Wikipedia](http://en.wikipedia.org/wiki/ISO_639-2)) specification uses a
+three-letter code, is used primarily in bibliography and terminology and
+covers many more languages than the ISO 639-1 specification.
+
+## Installation
+
+To install from [RubyGems](https://rubygems.org/gems/RbST):
 
 ```bash
 gem install iso-639
 ```
 
-The [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) specification uses a two-letter code to identify a language and is often the recommended way to identify languages in computer applications. The ISO 639-1 specification covers most developed and widely used languages.
+To install with [Bundler](https://bundler.io/), add the following to your
+Gemfile:
 
-The [ISO 639-2](http://www.loc.gov/standards/iso639-2/) ([Wikipedia](http://en.wikipedia.org/wiki/ISO_639-2)) specification uses a three-letter code, is used primarily in bibliography and terminology and covers many more languages than the ISO 639-1 specification.
+```ruby
+gem 'iso-639'
+```
+
+Then run `bundle install`
 
 ## Usage
 
@@ -59,7 +79,8 @@ Entries are arrays with convenience methods for accessing fields:
 # => "slovaque"
 ```
 
-The full data set is available through the `ISO_639::ISO_639_1` and `ISO_639::ISO_639_2` constants.
+The full data set is available through the `ISO_639::ISO_639_1` and
+`ISO_639::ISO_639_2` constants.
 
 ## Note on Patches/Pull Requests
 
