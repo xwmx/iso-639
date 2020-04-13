@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/xwmx/iso-639.svg?branch=master)](https://travis-ci.org/xwmx/iso-639)
+
 # ISO 639
 
 A Ruby gem that provides the ISO 639-2 and ISO 639-1 data sets along with some
