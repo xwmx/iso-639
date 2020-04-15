@@ -1,7 +1,7 @@
 # ISO 639
 
 [![Build Status](https://travis-ci.org/xwmx/iso-639.svg?branch=master)](https://travis-ci.org/xwmx/iso-639)
-[![Gem Version](https://img.shields.io/gem/v/iso-639)](http://rubygems.org/gems/iso-639)
+[![Gem Version](https://img.shields.io/gem/v/iso-639?color=blue)](http://rubygems.org/gems/iso-639)
 
 A Ruby gem that provides the ISO 639-2 and ISO 639-1 data sets along with some
 convenience methods for accessing different entries and entry fields. The data
