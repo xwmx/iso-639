@@ -16,6 +16,7 @@ class ISO_639 < Array
   # https://www.loc.gov/standards/iso639-2/ISO-639-2_utf-8.txt
   ISO_639_2 = lambda do
     dataset = []
+
     File.open(
       File.join(File.dirname(__FILE__), 'data', 'ISO-639-2_utf-8.txt'),
       'r:bom|utf-8'
@@ -24,6 +25,7 @@ class ISO_639 < Array
         dataset << self[*row.map { |v| v || '' }].freeze
       end
     end
+
     return dataset
   end.call.freeze
 
@@ -31,21 +33,25 @@ class ISO_639 < Array
   # all words and codes in all fields.
   INVERTED_INDEX = lambda do
     index = {}
+
     ISO_639_2.each_with_index do |record, i|
       record.each do |field|
         downcased = field.downcase
+
         words = (
           downcased.split(/[[:blank:]]|\(|\)|,|;/) +
           downcased.split(/;/)
         )
+
         words.each do |word|
           unless word.empty?
             index[word] ||= []
-            index[word] << i
+            index[word] <<  i
           end
         end
       end
     end
+
     return index
   end.call.freeze
 
@@ -76,6 +82,7 @@ class ISO_639 < Array
         end
       end
     end
+
     alias_method :find, :find_by_code
 
     # Returns the entry array for a language specified by its English name.
@@ -96,9 +103,11 @@ class ISO_639 < Array
     # of any kind, or it can be one of the words contained in the English or
     # French name field.
     def search(term)
-      term ||= ''
+      term            ||= ''
+
       normalized_term = term.downcase.strip
       indexes         = INVERTED_INDEX[normalized_term]
+
       indexes ? ISO_639_2.values_at(*indexes).uniq : []
     end
   end
@@ -107,6 +116,7 @@ class ISO_639 < Array
   def alpha3_bibliographic
     self[0]
   end
+
   alias_method :alpha3, :alpha3_bibliographic
 
   # The entry's alpha-3 terminologic (when given)
