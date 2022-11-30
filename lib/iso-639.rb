@@ -72,7 +72,7 @@ class ISO_639 < Array
       return if code.nil?
 
       case code.length
-      when 3
+      when 3, 7
         ISO_639_2.detect do |entry|
           entry if [entry.alpha3, entry.alpha3_terminologic].include?(code)
         end

@@ -24,6 +24,15 @@ describe ISO_639 do
     assert_equal ['eng', '', 'en', 'English', 'anglais'], ISO_639.find('en')
   end
 
+  it 'should return entry for alpha-3 bibliographic code' do
+    assert_equal %w[ger deu de German allemand], ISO_639.find('ger')
+  end
+
+  it 'should return entry for 7-character alpha-3 terminologic code (qaa-qtz)' do
+    assert_equal ['qaa-qtz', '', '', 'Reserved for local use', "réservée à l'usage local"], ISO_639.find_by_code('qaa-qtz')
+    assert_equal ['qaa-qtz', '', '', 'Reserved for local use', "réservée à l'usage local"], ISO_639.find('qaa-qtz')
+  end
+
   it 'should return entry for alpha-3 terminologic code' do
     assert_equal %w[ger deu de German allemand], ISO_639.find('deu')
   end
