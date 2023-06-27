@@ -1,6 +1,6 @@
 # ISO 639
 
-[![Build Status](https://travis-ci.org/xwmx/iso-639.svg?branch=master)](https://travis-ci.org/xwmx/iso-639)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/xwmx/iso-639/tests.yml?branch=master)](https://github.com/xwmx/iso-639/actions)
 [![Gem Version](https://img.shields.io/gem/v/iso-639?color=blue)](http://rubygems.org/gems/iso-639)
 [![Gem Downloads](https://img.shields.io/gem/dt/iso-639)](http://rubygems.org/gems/iso-639)
 
