@@ -1,0 +1,33 @@
+###############################################################################
+# .github/workflows/tests.yml
+###############################################################################
+
+name: "iso-639 · Test Suite"
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  test-ubuntu-latest:
+    name: "Test: Ubuntu Latest"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Ruby
+        # https://github.com/ruby/setup-ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.1
+          bundler-cache: true
+      - name: "Setup Environment"
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+      - name: "Run tests"
+        run: |
+          bundle exec rake
+
