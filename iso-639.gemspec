@@ -27,6 +27,9 @@ Gem::Specification.new do |s|
   ]
   s.homepage = 'http://github.com/xwmx/iso-639'
   s.require_paths = ['lib']
+
+  s.add_dependency('csv',                   '~> 3.3')
+
   s.add_development_dependency('minitest',  '~> 5', '>= 0')
   s.add_development_dependency('mocha',     '~> 1', '>= 0')
   s.add_development_dependency('rdoc',      '~> 6', '>= 0')
