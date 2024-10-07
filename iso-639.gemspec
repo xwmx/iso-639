@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'iso-639'
-  s.version = '0.3.7'
+  s.version = '0.3.8'
   s.licenses = ['MIT']
   s.summary = 'ISO 639-1 and ISO 639-2 language code entries and convenience methods.'
   s.description = 'ISO 639-1 and ISO 639-2 language code entries and convenience methods.'
