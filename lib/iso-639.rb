@@ -26,7 +26,7 @@ class ISO_639 < Array
       end
     end
 
-    return dataset
+    dataset
   end.call.freeze
 
   # An inverted index generated from the ISO_639_2 data. Used for searching
@@ -52,7 +52,7 @@ class ISO_639 < Array
       end
     end
 
-    return index
+    index
   end.call.freeze
 
   # The ISO 639-1 dataset as an array of entries. Each entry is an array with
